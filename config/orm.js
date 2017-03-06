@@ -37,25 +37,6 @@ var orm = {
       cb(result);
     });
   },
-  findOne: function(tableInput, id, cb){
-    var queryString = "SELECT * FROM ?? WHERE id = ?";
-    connection.query(queryString, [tableInput, id],function(err, result) {
-      if (err) {
-        throw err;
-      }
-      console.log(result[0])
-      cb(result[0]);
-    });
-  },
-  allWhere: function(tableInput, condition, cb){
-    var queryString = "SELECT * FROM ?? WHERE " + condition;
-    connection.query(queryString, [tableInput],function(err, result) {
-      if (err) {
-        throw err;
-      }
-      cb(result);
-    });
-  },
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -95,5 +76,5 @@ var orm = {
   }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
