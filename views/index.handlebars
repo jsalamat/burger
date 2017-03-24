@@ -1,1 +1,35 @@
-<h2>Heeeellllllooooo Woooorld</h2>
+<div class="container">
+	<div class="row">
+
+		<div id="titleh1">
+			<h1>EAT DA BURGER</h1>
+		</div>
+
+		<div class="row">
+			{{#each burgerdata}}
+			{{#unless this.devoured}}
+
+				<div>
+					<pre>{{this.id}}. {{this.burger_name}}</pre>
+				</div>
+
+
+				<div>
+					<form class="create-update-form" action="/burgers/update?_method=PUT" method="POST">
+
+					    <div id="form-group">
+					        <input type="hidden" id="em" name="burger_id" type="text" value={{this.id}}>
+					        <br>
+					        <button id="submit-user" type="submit">Devour It</button>
+					        <br>
+					    </div>
+
+					  </form>
+				</div>
+
+			{{/unless}}
+			{{/each}}
+		</div>
+		</div>
+	</div>
+</div>

@@ -9,10 +9,9 @@ var burger = require("../models/burger.js");
 
 
 router.get("/", function(req, res) {  
-  burger.all(function(data){
-    res.render('index', {
-      burgers : data
-    })
+  burger.all(function(burgerdata){
+    console.log(burgerdata);
+    res.render('index', {burgerdata});
   });
 });
 
