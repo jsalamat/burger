@@ -28,5 +28,14 @@
 
 			</div>
 		</div>
+		
+		<div class="col-xs-6 text-center" class="task">
+				{{#each burgerdata}}
+					{{#if this.devoured}}
+						<input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
+					{{/if}}
+				{{/each}}
+		</div>
+
 	</div>
 </div>
