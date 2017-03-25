@@ -15,8 +15,8 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/create", function(req, res) {
-  burger.create(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], function(response){
+router.post("/burgers/create", function(req, res) {
+  burger.create(req.body.burger_name, function(result){
     res.redirect('/')
   })
 });

@@ -47,19 +47,8 @@ var orm = {
     });
   },
 
-  create: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
-
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
-
-    console.log(queryString);
-
-    connection.query(queryString, vals, function(err, result) {
+  create: function(tableInput, val, cb) {
+    connection.query('INSERT INTO' +tableInput+" (burger_name) VALUES ("+val+");", function(err, result) {
       if (err) {
         throw err;
       }
